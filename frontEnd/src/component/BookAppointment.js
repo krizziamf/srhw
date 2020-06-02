@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
-import { Link } from "react-router-dom";
 import '../styles/bookAppt.css';
 import 'react-datepicker/dist/react-datepicker.css';
+import Privacy from './Privacy';
 
 class BookAppointment extends Component {
     constructor(props) {
@@ -21,6 +21,7 @@ class BookAppointment extends Component {
             contact: '',
             appointment: '',
             doctor: '',
+            doctorNames: [],
             complaint: '',
             patient: '',
             preferredDate: '',
@@ -29,6 +30,11 @@ class BookAppointment extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.getDoctorNames = this.getDoctorNames.bind(this);
+    }
+
+    componentDidMount() {
+        this.getDoctorNames();
     }
 
     handleChange = event => {
@@ -78,31 +84,54 @@ class BookAppointment extends Component {
             preferredTime,
             payment
         })
-        .then(res => this.setState({ text: res.data }))
-        .catch(err => console.log(err))
+            .then(res => this.setState({ text: res.data }))
+            .catch(err => console.log(err))
+    }
+
+    getDoctorNames = () => {
+        console.log(this.state.doctorNames);
+        axios.get('/doctor')
+            .then((response) => {
+                console.log(response.data);
+                this.setState({ doctorNames: response.data })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
 
     render() {
-        const { firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, complaint, patient, preferredDate, preferredTime, payment } = this.state;
+        const { firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment } = this.state;
         return (
 
             <div className="container">
-                <div >
-                    <img src="/images/srh2.png" className="img-fluid" />
-                </div>
-                <h1>Book An Appointment</h1>
+                <h4>Book an Appointment Form</h4>
                 <div className="read-div">
-                    <p> Sto. Rosario Hospital respects the confidentiality of your personal data. </p>
-
-                    <p>Please click <Link to="/privacy" target="_blank"><a>here</a></Link> for the detailed Sto. Rosario Hospital privacy statement.</p>
-
-                    <p>By filling out this online form and continuing to use this website, you agree to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
+                    <p>* Please click <a href="#" data-toggle="modal" data-target="#exampleModalLong">here</a> for the detailed Sto. Rosario Hospital privacy statement.</p>
+                </div>
+                <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">CONSENT FORM FOR TELECONSULTATION</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <Privacy />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <form onSubmit={this.handleSubmit} data-aos="fade-up" data-aos-duration="2000">
                     <div className="row">
-                        <div className="col">
-                            <h3>Client's Information</h3>
+                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <h5>Client's Information</h5>
                             <div className="form-group">
                                 <label>First Name <sup className="small">*</sup></label>
                                 <input
@@ -135,6 +164,7 @@ class BookAppointment extends Component {
                                 <div className="form-group col-md-4 mb-3">
                                     <label>Birthday<sup className="small">*</sup></label>
                                     <DatePicker
+                                        required
                                         className="form-control form-control-sm"
                                         selected={birthday}
                                         onChange={this.birthdayChange}
@@ -173,7 +203,7 @@ class BookAppointment extends Component {
 
 
                             <div className="form-group">
-                                <label>Complete address: <sup className="small">*</sup></label>
+                                <label>Home Address: <sup className="small">*</sup></label>
                                 <textarea
                                     className="form-control form-control-sm"
                                     name="address"
@@ -204,8 +234,8 @@ class BookAppointment extends Component {
                             </div>
                         </div>
 
-                        <div className="col">
-                            <h3>Appointment Information</h3>
+                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <h5>Appointment Information</h5>
                             <div className="form-row">
                                 <div className="form-group col">
                                     <label>Type of Appointment  <sup className="small">*</sup></label>
@@ -240,9 +270,9 @@ class BookAppointment extends Component {
                                     value={doctor}
                                     onChange={this.handleChange}>
                                     <option value="">Select Doctor</option>
-                                    <option value="Gil E. Maderazo, MD">Gil E. Maderazo, MD</option>
-                                    <option value="Aurea L. Maderazo, MD">Aurea L. Maderazo, MD</option>
-                                    <option value="Donna Aurea L. Maderazo, MD">Donna Aurea L. Maderazo, MD</option>
+                                    {doctorNames.map((data, index) => {
+                                        return <option value={data._id} key={index}>{data.doctorName}</option>
+                                    })}
                                 </select>
                             </div>
 
@@ -260,6 +290,7 @@ class BookAppointment extends Component {
                                     <div className="form-group col">
                                         <label>Preferred Date  <sup className="small">*</sup></label>
                                         <DatePicker
+                                            required
                                             className="form-control form-control-sm"
                                             selected={preferredDate}
                                             onChange={this.dateChange}
@@ -276,6 +307,7 @@ class BookAppointment extends Component {
                                     <div className="form-group col">
                                         <label>Preferred Time <sup className="small">*</sup></label>
                                         <DatePicker
+                                            required
                                             className="form-control form-control-sm"
                                             selected={preferredTime}
                                             onChange={this.timeChange}
@@ -288,45 +320,6 @@ class BookAppointment extends Component {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="form-group">
-                                <label>Preferred Time <sup className="small">*</sup></label>
-                                <div className="form-row">
-                                    <div className="form group col">
-                                        <select required
-                                            className="form-control form-control-sm"
-                                            name="time"
-                                            value={time}
-                                            onChange={this.handleChange}
-                                        >
-                                            <option value="">Select Hour</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                        </select>
-                                    </div>
-                                    <div className="form group col">
-                                        <select required
-                                            className="form-control form-control-sm"
-                                            name="meri"
-                                            value={meri}
-                                            onChange={this.handleChange}
-                                        >
-                                            <option value="">Select Meridiem</option>
-                                            <option value="AM">AM</option>
-                                            <option value="PM">PM</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div> */}
                             <div className="form-group">
                                 <label>Mode of Payment <sup className="small">*</sup></label>
                                 <select required
@@ -344,7 +337,7 @@ class BookAppointment extends Component {
                             <p>{this.state.text}</p>
                         </div>
                     </div>
-
+                    <p>* By filling out this online form and continuing to use this website, you agree to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
                 </form>
             </div>
         )

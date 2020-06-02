@@ -1,53 +1,68 @@
 body {
-    margin: 0;
-    padding: 0;
-    /* background: url(/images/srh1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; */
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'PT Sans', sans-serif;
+  /* background: url(/images/srh1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 .container {
-  max-width: 1200px;
+max-width: 1200px;
 }
 
-.container h1 {
-  text-align: center;
-  margin: 50px 0;
+.container h4 {
+padding: 10px 0;
+text-align: center;
+font-weight: 600;
+margin-top: 18px;
+margin-bottom: 25px;
+background-color: #fbfcfc;
 }
-
 
 .read-div {
-  padding: 0 30px;
+margin: 0 10%;
 }
 
 .read-div p {
-  font-size: 14px;
-  color: #333;
-  font-style: italic;
-  line-height: 1.6;
+font-size: 13px;
+margin-bottom: 0;
+color: #333;
+font-style: italic;
+line-height: 1.2;
 }
 
 form {
-  margin:70px 0;
-  padding:30px;
-  background-color:  #fbfcfc;
+margin:10px auto 50px;
+padding:25px;
+max-width:960px;
+background-color:  #fbfcfc;
 }
 
 form h1 {
-  text-align: center;
-  padding: 30px;
+text-align: center;
+padding: 30px;
 }
 
-form h3 {
-  padding-bottom: 30px;
+form h5 {
+border-bottom:  #d5dbdb 1px solid;
+padding-bottom: 15px;
 }
 
-form button {
-  text-transform: uppercase;
-  margin: 10px 0;
-  width: 150px;
+form .btn {
+margin: 10px 0;
+color: #fff;
+background-color: #2B6DAD;
+border-color: #2B6DAD;
+/* text-transform: uppercase; */
+letter-spacing: 0.05em;
+font-weight: bold;
+border-radius: 0;
+width: 100%;
 }
 
 form p {
-  font-style: italic;
+font-style: italic;
+font-size: 13px;
 }

@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
 const date = new Date();
 const stringRequired = {
-  type:String,
-  required:true
+  type: String,
+  required: true
+};
+const numberRequired = {
+  type: Number,
+  required: true
 };
 let appointmentSchema = new mongoose.Schema({
   firstname: stringRequired,
   lastname: stringRequired,
-  middlename: stringRequired,
-  age: stringRequired,
+  middlename: String,
+  age: numberRequired,
   birthday: stringRequired,
   gender: stringRequired,
   address: stringRequired,
-  email: stringRequired,
+  email: String,
   contact: stringRequired,
   appointment: stringRequired,
   doctor: stringRequired,
@@ -24,38 +28,41 @@ let appointmentSchema = new mongoose.Schema({
 })
 let Appointments = mongoose.model('Appointments', appointmentSchema);
 
-let createAppointmentsCollection = ()=>{
-  Appointments.createCollection().then(res=>{
-    console.log(date,'Collection Appointment Created');
-  }, err =>{
+let createAppointmentsCollection = () => {
+  Appointments.createCollection().then(res => {
+    console.log(date, 'Collection Appointment Created');
+  }, err => {
     throw err;
   });
 }
 
-let createAppointment = (payload,cb)=>{
-  return Appointments.create(payload,(err, docs)=>{
-    if(err){
+let createAppointment = (payload, cb) => {
+  return Appointments.create(payload, (err, docs) => {
+    if (err) {
       console.error(err);
       return cb(err);
-    }else{
+    } else {
       return cb(null, docs._id);
     }
   });
 }
 
-let findAppointment = () =>{
-  return Appointments.find({},(err, docs)=>{
-    if(err){
+let findAppointment = () => {
+  return Appointments.find({}, (err, docs) => {
+    if (err) {
       console.error(err);
       return;
-    }else{
+    } else {
       return docs;
     }
   })
 }
 
 module.exports = {
-  createAppointmentsCollection : createAppointmentsCollection,
-  createAppointment:createAppointment,
-  findAppointment:findAppointment
+  createAppointmentsCollection: createAppointmentsCollection,
+  createAppointment: createAppointment,
+  findAppointment: findAppointment
 }
+
+
+//model ay para sa db. lahat ng tungkol sa db

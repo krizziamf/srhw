@@ -6,9 +6,7 @@ class Privacy extends Component {
         return (
             <div className="container">
                 <div className="privacy-container">
-                    <h1>CONSENT FORM FOR TELECONSULTATION</h1>
-
-                    <h5><strong>Pagpapakilala at Layunin: </strong></h5>
+                    <h6><strong>Pagpapakilala at Layunin: </strong></h6>
                     <p>Ang Telemedicine ay ang paggamit ng telepono, cellphone, o computer kung saan bilang pasyente, ako ay mabibigyan ng kakayahan
                         upang makipag-usap sa aking doctor para sa pagtukoy ng aking posibleng sakit, lunas na gagawin, pagbibigay-kaalaman, at pangangalaga
                          pagkatapos ng mga unang pagpapagamot (follow-up care) sa pagkakataong hindi possible nag pag-uusap ng harapan sa parehong lugar sa

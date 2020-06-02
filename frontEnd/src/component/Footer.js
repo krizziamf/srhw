@@ -9,9 +9,9 @@ class Footer extends Component {
                     <div className="row section">
                         <div className="col-sm-12 col-md-6 col-xl-5">
                             <h3 className="small-title">About Us</h3>
-                            <p>Sto. Rosario Hospital(SRH) is a community hospital dedicated to providing quality, value driven health care to all it serves.</p>
+                            <p>Sto. Rosario Hospital (SRH) is a community hospital dedicated to providing quality, value driven health care to all it serves.</p>
                             <div className="footer-div"><i class="fa fa-map-marker"></i> 130 Escano St. Rosario, Batangas 4225</div>
-                            <div className="footer-div"><i class="fa fa-phone"></i>  043 321 3988</div>
+                            <div className="footer-div"><i class="fa fa-phone"></i>  043 321 3988 / 09328436537</div>
                             <div className="footer-div"><i class="fa fa-envelope"></i>  sntrosario@yahoo.com</div>
 
                         </div>
