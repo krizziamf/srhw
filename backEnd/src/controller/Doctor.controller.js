@@ -1,4 +1,4 @@
-const { createDoctor, findDoctor } = require('../model/doctors.model')
+const { createDoctor, findDoctor, findDoctorById } = require('../model/doctors.model')
 
 let setDoctor = (req) => {
     return new Promise((resolve, reject) => {
@@ -22,7 +22,20 @@ let getDoctors = (req) => {
     })
 }
 
+/////////
+let getDoctorById = (req) => {
+    return new Promise((resolve, reject) => {
+        let data = findDoctorById(req);
+        if (data) {
+            resolve(data);
+        } else {
+            reject();
+        }
+    })
+}
+
 module.exports = {
     setDoctor: setDoctor,
-    getDoctors: getDoctors
+    getDoctors: getDoctors,
+    getDoctorById: getDoctorById
 }

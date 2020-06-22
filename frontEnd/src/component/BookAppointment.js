@@ -3,6 +3,7 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import '../styles/bookAppt.css';
 import 'react-datepicker/dist/react-datepicker.css';
+import {setMinutes, setHours} from "date-fns";
 import Privacy from './Privacy';
 
 class BookAppointment extends Component {
@@ -26,7 +27,16 @@ class BookAppointment extends Component {
             patient: '',
             preferredDate: '',
             preferredTime: '',
-            payment: ''
+            payment: '',
+            selectedDate: '',
+            doctorTime: [],
+            filteredDoctorTime: [],
+            doctorAppointments: [],
+            filteredDoctorAppointment: [],
+            initDate: new Date(),
+            disablePreferredDate: true,
+            minimumTime: '',
+            maximumTime: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,6 +45,8 @@ class BookAppointment extends Component {
 
     componentDidMount() {
         this.getDoctorNames();
+        this.getDoctorTime();
+        this.getDoctorAppointments();
     }
 
     handleChange = event => {
@@ -46,19 +58,92 @@ class BookAppointment extends Component {
     birthdayChange = date => {
         this.setState({
             birthday: date
-
         })
     }
-    dateChange = date => {
+
+    doctorChange = event => {
+        const filterTime = this.state.doctorTime.filter( time => {
+            return time.doctor === event.target.value
+        });
+        // this.getAppointment(event.target.value);
+
+        const filterAppointment = this.appointments(event.target.value);
+
         this.setState({
-            preferredDate: date
+            doctor: event.target.value,
+            preferredDate: '',  //set to empty when choosing again a doctor
+            preferredTime: '',  //set to empty when choosing again a doctor
+            filteredDoctorTime: filterTime,
+            disablePreferredDate: false,
+            filteredDoctorAppointment: filterAppointment
         })
+    }
+
+    appointments = (doctorId) => {
+        const filterAppointment = this.state.doctorAppointments.filter( appointment => {
+            return appointment.doctor === doctorId
+        });
+        return filterAppointment;
+    }
+
+    // getAppointment = (doctorId) => {
+    //     console.log("GET APPOINTMENT");
+    //     axios.get(`/appointment/${doctorId}`)
+    //         .then( res => this.setState({ appointments: res.data}))
+    //         .catch( err => console.log("ERROR "+err))
+    // }
+
+    dateChange = date => {
+        
+        var newDate = date.toDateString();
+        const start = this.state.filteredDoctorTime[0].timeStart;
+        const end = this.state.filteredDoctorTime[0].timeEnd;
+
+        const getMinTime = this.minMaxTime(date, start);
+        const getMaxTime = this.minMaxTime(date, end);
+
+        this.setState({
+            preferredDate: date,
+            preferredTime: '',
+            minimumTime: getMinTime,
+            maximumTime: getMaxTime,
+            selectedDate: newDate,
+            initDate: date
+        })
+    }
+
+    minMaxTime = (date, timeStartEnd) => {
+        var newDate = date.toDateString();
+
+        const time = new Date(`${newDate} ${timeStartEnd}`);
+        const minHour = time.getHours();
+        const minMinute = time.getMinutes();
+
+        return setHours(setMinutes(date, minMinute), minHour)
     }
 
     timeChange = date => {
+        const newTime = new Date(`${this.state.selectedDate} ${date.getHours()}:${date.getMinutes()}`)
+
         this.setState({
-            preferredTime: date
+            preferredTime: newTime
         })
+    }
+
+    excludeTime = (date) => {
+        let excludeDoctorTime = [] 
+
+        this.state.filteredDoctorAppointment.map(appointment => {
+            let appointmentDate = new Date(appointment.preferredTime);// from 2020-06-30T02:15:00.000Z to 
+            const dateString = date.toDateString();
+            const appDateString = new Date(appointment.preferredDate).toDateString();
+        
+            if(appDateString === dateString) {
+                excludeDoctorTime.push(setHours(setMinutes(appointmentDate, appointmentDate.getMinutes()), appointmentDate.getHours()))
+            }
+        })
+
+        return excludeDoctorTime;
     }
 
     handleSubmit = event => {
@@ -83,16 +168,37 @@ class BookAppointment extends Component {
             preferredDate,
             preferredTime,
             payment
-        })
+        }, console.log("Preferred: "+ preferredDate, preferredTime))
             .then(res => this.setState({ text: res.data }))
             .catch(err => console.log(err))
+
+        
+        this.setState({
+            firstname: '',
+            lastname: '',
+            middlename: '',
+            age: '',
+            birthday: '',
+            gender: '',
+            address: '',
+            email: '',
+            contact: '',
+            appointment: '',
+            doctor: '',
+            complaint: '',
+            patient: '',
+            preferredDate: '',
+            preferredTime: '',
+            payment: '',
+            disablePreferredDate: true
+        });
     }
 
     getDoctorNames = () => {
-        console.log(this.state.doctorNames);
+        // console.log(this.state.doctorNames);
         axios.get('/doctor')
             .then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 this.setState({ doctorNames: response.data })
             })
             .catch((error) => {
@@ -100,9 +206,31 @@ class BookAppointment extends Component {
             })
     }
 
+    getDoctorTime = () => {
+        console.log("GET TIME");
+        axios.get('/time')
+            // .then( res => console.log(res.data))
+            .then( res => this.setState({doctorTime: res.data}))
+            .catch( err => console.log("ERROR: " + err))
+    }
+
+    getDoctorAppointments = () => {
+        console.log("GET APPOINTMENT");
+        axios.get('/appointment')
+            .then( res => this.setState({ doctorAppointments: res.data}))
+            .catch( err => console.log("ERROR "+err))
+    }
+
+    isNotSunday = (date) => {
+        const day = date.getDay();
+        return day !== 0
+    }
+
+    
 
     render() {
-        const { firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment } = this.state;
+        const { minimumTime, maximumTime, initDate, firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment, minHour, minMinute, maxHour, maxMinute} = this.state;
+
         return (
 
             <div className="container">
@@ -173,7 +301,7 @@ class BookAppointment extends Component {
                                         showYearDropdown
                                         dropdownMode="select"
                                         maxDate={new Date()}
-                                        filterDate={this.isWeekday}
+                                        // filterDate={this.isWeekday}
                                         dateFormat="MMMM d, yyyy"
                                     />
                                 </div>
@@ -268,7 +396,8 @@ class BookAppointment extends Component {
                                     className="form-control form-control-sm"
                                     name="doctor"
                                     value={doctor}
-                                    onChange={this.handleChange}>
+                                    // onChange={this.handleChange}>
+                                    onChange={this.doctorChange}>
                                     <option value="">Select Doctor</option>
                                     {doctorNames.map((data, index) => {
                                         return <option value={data._id} key={index}>{data.doctorName}</option>
@@ -299,8 +428,9 @@ class BookAppointment extends Component {
                                             showYearDropdown
                                             dropdownMode="select"
                                             minDate={new Date()}
-                                            filterDate={this.isWeekday}
+                                            filterDate={this.isNotSunday}
                                             dateFormat="MMMM d, yyyy"
+                                            disabled={this.state.disablePreferredDate}
                                         />
                                     </div>
 
@@ -313,7 +443,12 @@ class BookAppointment extends Component {
                                             onChange={this.timeChange}
                                             showTimeSelect
                                             showTimeSelectOnly
+                                            // minDate={preferredDate}
                                             timeIntervals={15}
+                                            minTime={minimumTime}
+                                            maxTime={maximumTime}
+                                            // maxDate={preferredDate}
+                                            excludeTimes={this.excludeTime(initDate)}
                                             timeCaption="Time"
                                             dateFormat="h:mm aa"
                                         />

@@ -38,8 +38,20 @@ let findDoctor = () => {
   })
 }
 
+let findDoctorById = (id) => {
+  return Doctors.findById(id, (err, docs) => {
+    if (err) {
+      console.error(err);
+      return;
+    } else {
+      return docs.doctorName;
+    }
+  })
+}
+
 module.exports = {
   doctorsCollection: doctorsCollection,
   createDoctor: createDoctor,
-  findDoctor: findDoctor
+  findDoctor: findDoctor,
+  findDoctorById: findDoctorById
 }

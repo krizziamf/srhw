@@ -15,3 +15,4 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 const doctorsModel = require('../model/doctors.model').doctorsCollection(); 
 const appointmentModel = require('../model/appointment.model').createAppointmentsCollection();
+const timeModel = require('../model/time.model').timeCollection();

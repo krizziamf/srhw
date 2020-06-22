@@ -35,11 +35,9 @@ let createAppointmentsCollection = () => {
     throw err;
   });
 }
-
 let createAppointment = (payload, cb) => {
   return Appointments.create(payload, (err, docs) => {
     if (err) {
-      console.error(err);
       return cb(err);
     } else {
       return cb(null, docs._id);
@@ -58,10 +56,25 @@ let findAppointment = () => {
   })
 }
 
+// let findAppointmentOfDoctor = (id) => {
+//   let doctorId = {doctor: id}
+//   return Appointments.find(doctorId, (err, docs) => {
+//     if (err) {
+//       console.error(err);
+//       return;
+//     } else {
+//       console.log("findAppointmentOfDoctor "+docs)
+//       return docs;
+//     }
+//   })
+// }
+
+
 module.exports = {
   createAppointmentsCollection: createAppointmentsCollection,
   createAppointment: createAppointment,
   findAppointment: findAppointment
+  // findAppointmentOfDoctor: findAppointmentOfDoctor
 }
 
 
