@@ -3,7 +3,7 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import '../styles/bookAppt.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import {setMinutes, setHours} from "date-fns";
+import { setMinutes, setHours } from "date-fns";
 import Privacy from './Privacy';
 
 class BookAppointment extends Component {
@@ -62,7 +62,7 @@ class BookAppointment extends Component {
     }
 
     doctorChange = event => {
-        const filterTime = this.state.doctorTime.filter( time => {
+        const filterTime = this.state.doctorTime.filter(time => {
             return time.doctor === event.target.value
         });
         // this.getAppointment(event.target.value);
@@ -80,7 +80,7 @@ class BookAppointment extends Component {
     }
 
     appointments = (doctorId) => {
-        const filterAppointment = this.state.doctorAppointments.filter( appointment => {
+        const filterAppointment = this.state.doctorAppointments.filter(appointment => {
             return appointment.doctor === doctorId
         });
         return filterAppointment;
@@ -94,7 +94,7 @@ class BookAppointment extends Component {
     // }
 
     dateChange = date => {
-        
+
         var newDate = date.toDateString();
         const start = this.state.filteredDoctorTime[0].timeStart;
         const end = this.state.filteredDoctorTime[0].timeEnd;
@@ -131,14 +131,14 @@ class BookAppointment extends Component {
     }
 
     excludeTime = (date) => {
-        let excludeDoctorTime = [] 
+        let excludeDoctorTime = []
 
         this.state.filteredDoctorAppointment.map(appointment => {
             let appointmentDate = new Date(appointment.preferredTime);// from 2020-06-30T02:15:00.000Z to 
             const dateString = date.toDateString();
             const appDateString = new Date(appointment.preferredDate).toDateString();
-        
-            if(appDateString === dateString) {
+
+            if (appDateString === dateString) {
                 excludeDoctorTime.push(setHours(setMinutes(appointmentDate, appointmentDate.getMinutes()), appointmentDate.getHours()))
             }
         })
@@ -168,30 +168,30 @@ class BookAppointment extends Component {
             preferredDate,
             preferredTime,
             payment
-        }, console.log("Preferred: "+ preferredDate, preferredTime))
+        }, console.log("Preferred: " + preferredDate, preferredTime))
             .then(res => this.setState({ text: res.data }))
             .catch(err => console.log(err))
 
-        
-        this.setState({
-            firstname: '',
-            lastname: '',
-            middlename: '',
-            age: '',
-            birthday: '',
-            gender: '',
-            address: '',
-            email: '',
-            contact: '',
-            appointment: '',
-            doctor: '',
-            complaint: '',
-            patient: '',
-            preferredDate: '',
-            preferredTime: '',
-            payment: '',
-            disablePreferredDate: true
-        });
+
+        // this.setState({
+        //     firstname: '',
+        //     lastname: '',
+        //     middlename: '',
+        //     age: '',
+        //     birthday: '',
+        //     gender: '',
+        //     address: '',
+        //     email: '',
+        //     contact: '',
+        //     appointment: '',
+        //     doctor: '',
+        //     complaint: '',
+        //     patient: '',
+        //     preferredDate: '',
+        //     preferredTime: '',
+        //     payment: '',
+        //     disablePreferredDate: true
+        // });
     }
 
     getDoctorNames = () => {
@@ -207,18 +207,18 @@ class BookAppointment extends Component {
     }
 
     getDoctorTime = () => {
-        console.log("GET TIME");
+        // console.log("GET TIME");
         axios.get('/time')
             // .then( res => console.log(res.data))
-            .then( res => this.setState({doctorTime: res.data}))
-            .catch( err => console.log("ERROR: " + err))
+            .then(res => this.setState({ doctorTime: res.data }))
+            .catch(err => console.log("ERROR: " + err))
     }
 
     getDoctorAppointments = () => {
-        console.log("GET APPOINTMENT");
+        // console.log("GET APPOINTMENT");
         axios.get('/appointment')
-            .then( res => this.setState({ doctorAppointments: res.data}))
-            .catch( err => console.log("ERROR "+err))
+            .then(res => this.setState({ doctorAppointments: res.data }))
+            .catch(err => console.log("ERROR " + err))
     }
 
     isNotSunday = (date) => {
@@ -226,10 +226,10 @@ class BookAppointment extends Component {
         return day !== 0
     }
 
-    
+
 
     render() {
-        const { minimumTime, maximumTime, initDate, firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment, minHour, minMinute, maxHour, maxMinute} = this.state;
+        const { minimumTime, maximumTime, initDate, firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment, minHour, minMinute, maxHour, maxMinute } = this.state;
 
         return (
 
@@ -238,20 +238,20 @@ class BookAppointment extends Component {
                 <div className="read-div">
                     <p>* Please click <a href="#" data-toggle="modal" data-target="#exampleModalLong">here</a> for the detailed Sto. Rosario Hospital privacy statement.</p>
                 </div>
-                <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">CONSENT FORM FOR TELECONSULTATION</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div className="modal fade bd-example-modal-lg" id="exampleModalLong" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-lg" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLongTitle">CONSENT FORM FOR TELECONSULTATION</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <Privacy />
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -263,7 +263,7 @@ class BookAppointment extends Component {
                             <div className="form-group">
                                 <label>First Name <sup className="small">*</sup></label>
                                 <input
-                                    class="form-control form-control-sm"
+                                    className="form-control form-control-sm"
                                     type="text"
                                     name="firstname"
                                     value={firstname}
@@ -272,7 +272,7 @@ class BookAppointment extends Component {
                             <div className="form-group">
                                 <label>Last Name <sup className="small">*</sup></label>
                                 <input
-                                    class="form-control form-control-sm"
+                                    className="form-control form-control-sm"
                                     type="text"
                                     name="lastname"
                                     value={lastname}
@@ -281,7 +281,7 @@ class BookAppointment extends Component {
                             <div className="form-group">
                                 <label>Middle Name </label>
                                 <input
-                                    class="form-control form-control-sm"
+                                    className="form-control form-control-sm"
                                     type="text"
                                     name="middlename"
                                     value={middlename}
@@ -290,7 +290,7 @@ class BookAppointment extends Component {
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-4 mb-3">
-                                    <label>Birthday<sup className="small">*</sup></label>
+                                    <label>Birthday <sup className="small">*</sup></label>
                                     <DatePicker
                                         required
                                         className="form-control form-control-sm"
@@ -301,14 +301,13 @@ class BookAppointment extends Component {
                                         showYearDropdown
                                         dropdownMode="select"
                                         maxDate={new Date()}
-                                        // filterDate={this.isWeekday}
                                         dateFormat="MMMM d, yyyy"
                                     />
                                 </div>
                                 <div className="form-group col-md-4 mb-3">
                                     <label>Age <sup className="small">*</sup></label>
                                     <input
-                                        class="form-control form-control-sm"
+                                        className="form-control form-control-sm"
                                         type="text"
                                         name="age"
                                         value={age}
@@ -317,7 +316,8 @@ class BookAppointment extends Component {
                                 </div>
                                 <div className="form-group col-md-4 mb-3">
                                     <label>Gender <sup className="small">*</sup></label>
-                                    <select required
+                                    <select
+                                        required
                                         className="form-control form-control-sm"
                                         name="gender"
                                         value={gender}
@@ -342,7 +342,7 @@ class BookAppointment extends Component {
                             <div className="form-group">
                                 <label>Email</label>
                                 <input
-                                    class="form-control form-control-sm"
+                                    className="form-control form-control-sm"
                                     type="email"
                                     name="email"
                                     value={email}
@@ -352,9 +352,9 @@ class BookAppointment extends Component {
                             <div className="form-group">
                                 <label>Contact Number <sup className="small">*</sup></label>
                                 <input
-                                    class="form-control form-control-sm"
+                                    className="form-control form-control-sm"
                                     type="tel"
-                                    maxlength="11"
+                                    maxLength="11"
                                     name="contact"
                                     value={contact}
                                     onChange={this.handleChange}
@@ -444,7 +444,7 @@ class BookAppointment extends Component {
                                             showTimeSelect
                                             showTimeSelectOnly
                                             // minDate={preferredDate}
-                                            timeIntervals={15}
+                                            timeIntervals={20}
                                             minTime={minimumTime}
                                             maxTime={maximumTime}
                                             // maxDate={preferredDate}

@@ -12,8 +12,15 @@
 .topbar-container a {
     font-weight: bolder;
     font-size: 1.5em;
-    color: #2B6DAD;
+    color: rgb(56, 76, 96);
     letter-spacing: 2px;
+}
+
+.navbar-text {
+    vertical-align: middle;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2B6DAD;
 }
 
 .fa {
@@ -91,24 +98,29 @@ nav.navbar ul li a {
     position: relative;
 }
 
-/* nav.navbar ul li a:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: '.';
-    color: transparent;
-    background: #fff;
-    height: 2px;
-} */
-/* 
-nav.navbar ul li a:hover:after {
-    width: 100%;
-    
- } */
+.navbar .navbar-toggler-icon {
+   background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
+}
+
+.navbar 
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
   
- @media only screen and (max-width: 600px) {
-    
+ @media only screen and (max-width: 500px) {
+    .topbar-col1 {
+        text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .topbar-col1 {
+        margin: auto 0;
+    }
   }
