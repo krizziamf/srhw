@@ -11,6 +11,13 @@ var corsOption = () => {
         credentials: true
       }
       break;
+      case 'production':
+      option = {
+        origin: ['https://www.storosariohospital.com', 'https://storosariohospital.com','http://www.storosariohospital.com', 'http://storosariohospital.com'],
+        allowedHeaders: "Content-Type,Authorization,Accept",
+        credentials: true
+      }
+      break;
     case '':
       break;
     default:
