@@ -11,7 +11,12 @@ var corsOption = () => {
         credentials: true
       }
       break;
-    case '':
+    case 'production':
+      option = {
+        origin: ['https://www.storosariohospital.com', 'https://storosariohospital.com','http://www.storosariohospital.com', 'http://storosariohospital.com'],
+        allowedHeaders: "Content-Type,Authorization,Accept",
+        credentials: true
+      }
       break;
     default:
       console.error('Invalid Environment');
