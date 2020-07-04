@@ -19,7 +19,7 @@ let setAppointment = (req) => {
         
         resolve("Thank you! Your request has been sent."); 
         getDoctorById(req.body.doctor).then(response => {
-          let form = Object.assign(req.body, { birthday: bdayString, doctor: response.doctorName, preferredDate: dateString, preferredTime: convertedTime, subject: 'New Appointment', receiver: 'srhonlinemds@gmail.com' });
+          let form = Object.assign(req.body, { birthday: bdayString, doctor: response.doctorName, preferredDate: dateString, preferredTime: convertedTime, subject: 'New Appointment', receiver: 'bajfev@luxusmail.ga' });//srhonlinemds@gmail.com
           sendEmail(form, 'newAppointment'); 
         })
       }
