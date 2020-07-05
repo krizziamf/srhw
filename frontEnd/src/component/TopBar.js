@@ -9,14 +9,14 @@ class TopBar extends Component {
                 <div className="row">
                     <div className="col-sm-12 col-md-8 col-lg-7 col-xl-5 topbar-col1">
                         <Link to="/bookappointment"> </Link>
-                        <div><a className="navbar-brand">
+                        <div className=""><a className="navbar-brand">
                             <span><img src="./images/logo2.jpg" width="95px;" height="65px" /></span>
                         </a>
                             <span className="navbar-text">STO. ROSARIO HOSPITAL</span>
                         </div>
 
                     </div>
-                    <div className="btn-col col-sm-12 col-md-4 col-lg-5 col-xl-7">
+                    <div className="btn-col col-sm-12 col-md-4 col-lg-5 col-xl-7 topbar-col2">
                         <ul className="list-inline">
                             <li className="list-inline-item"><i className="fa fa-envelope"></i> sntrosario@yahoo.com </li>
                             <li className="list-inline-item"><i className="fa fa-phone"></i> 043 321 3988 / 09328436537</li>

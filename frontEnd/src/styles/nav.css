@@ -115,7 +115,12 @@ nav.navbar ul li a {
   
  @media only screen and (max-width: 500px) {
     .topbar-col1 {
+        padding-top: 15px;
         text-align: center;
+    }
+    .topbar-col2 .list-inline{
+        text-align: center;
+        padding-bottom: 18px;
     }
   }
 

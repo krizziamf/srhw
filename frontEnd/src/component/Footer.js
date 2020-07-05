@@ -15,7 +15,7 @@ class Footer extends Component {
                             <div className="footer-div"><i className="fa fa-envelope"></i>  sntrosario@yahoo.com</div>
 
                         </div>
-                        <div className="col-links col-sm-6 col-md-3 col-xl-2">
+                        <div className="col-links col-sm-6 col-md-3 col-xl-2 footer__col">
                             <h3 className="link-text small-title">
                                 Links
                                 </h3>
@@ -29,14 +29,14 @@ class Footer extends Component {
                                 <li><a href="#">Contact Us</a></li>
                             </ul>
                         </div>
-                        <div className="col-sm-6 col-md-2 col-xl-2">
+                        <div className="col-sm-6 col-md-2 col-xl-2 footer__col">
                             <div className="social-footer">
                                 <h3 className="small-title">Connect with us </h3>
                                 <a href="https://www.facebook.com/OfficialSRH1987/?ref=br_rs" target="_blank"><i className="fa fa-facebook icon-round"></i></a>
                             </div>
                         </div>
 
-                        <div className="col-sm-6 col-md-2 col-xl-3">
+                        <div className="col-sm-6 col-md-2 col-xl-3 footer__col">
                             <img src="images/logo1.jpg" className="footer-logo" />
 
                         </div>

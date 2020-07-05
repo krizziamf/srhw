@@ -152,3 +152,14 @@ footer .fa {
   font-size:15px;
   color:#fff;
  }
+
+ @media only screen and (max-width: 766px) {
+  .footer__col {
+    padding: 15px;
+  }
+  .footer-logo {
+    width: 140px;
+  height: 140px;
+  }
+}
+ 
