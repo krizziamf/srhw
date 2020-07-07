@@ -147,6 +147,7 @@ class BookAppointment extends Component {
     }
 
     handleSubmit = event => {
+        alert(`Thank you! Your request has been sent. `);
         event.preventDefault();
 
         const { firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, complaint, patient, preferredDate, preferredTime, payment } = this.state;
@@ -173,25 +174,25 @@ class BookAppointment extends Component {
             .catch(err => console.log(err))
 
 
-        // this.setState({
-        //     firstname: '',
-        //     lastname: '',
-        //     middlename: '',
-        //     age: '',
-        //     birthday: '',
-        //     gender: '',
-        //     address: '',
-        //     email: '',
-        //     contact: '',
-        //     appointment: '',
-        //     doctor: '',
-        //     complaint: '',
-        //     patient: '',
-        //     preferredDate: '',
-        //     preferredTime: '',
-        //     payment: '',
-        //     disablePreferredDate: true
-        // });
+        this.setState({
+            firstname: '',
+            lastname: '',
+            middlename: '',
+            age: '',
+            birthday: '',
+            gender: '',
+            address: '',
+            email: '',
+            contact: '',
+            appointment: '',
+            doctor: '',
+            complaint: '',
+            patient: '',
+            preferredDate: '',
+            preferredTime: '',
+            payment: '',
+            disablePreferredDate: true
+        });
     }
 
     getDoctorNames = () => {
@@ -341,7 +342,7 @@ class BookAppointment extends Component {
                             </div>
                             <div className="form-group">
                                 <label>Email</label>
-                                <input
+                                <input required
                                     className="form-control form-control-sm"
                                     type="email"
                                     name="email"
@@ -362,7 +363,7 @@ class BookAppointment extends Component {
                             </div>
                         </div>
 
-                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 apt-col">
                             <h5>Appointment Information</h5>
                             <div className="form-row">
                                 <div className="form-group col">
@@ -469,7 +470,7 @@ class BookAppointment extends Component {
                                 </select>
                             </div>
                             <button className="btn btn-primary">Submit</button>
-                            <p>{this.state.text}</p>
+                            {/* <p>{this.state.text}</p> */}
                         </div>
                     </div>
                     <p>* By filling out this online form and continuing to use this website, you agree to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
