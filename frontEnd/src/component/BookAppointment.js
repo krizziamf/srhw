@@ -470,7 +470,7 @@ class BookAppointment extends Component {
                                 </select>
                             </div>
                             <button className="btn btn-primary">Submit</button>
-                            {/* <p>{this.state.text}</p> */}
+                            <p>{this.state.text}</p>
                         </div>
                     </div>
                     <p>* By filling out this online form and continuing to use this website, you agree to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
