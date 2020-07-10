@@ -6,8 +6,8 @@ class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="container">
-                    <div className="row section">
-                        <div className="col-sm-12 col-md-6 col-xl-4">
+                    <div className="row section footer-row">
+                        <div className="col-sm-12 col-md-5 col-lg-3 col-xl-4 col-about">
                             <h3 className="small-title">About Us</h3>
                             <hr className="hr-left" />
                             <p>Sto. Rosario Hospital (SRH) is a community hospital dedicated to providing quality, value driven health care to all it serves.</p>
@@ -16,8 +16,8 @@ class Footer extends Component {
                             <div className="footer-div"><i className="fa fa-envelope"></i>  sntrosario@yahoo.com</div>
 
                         </div>
-                        <div className="col-links col-sm-6 col-md-2 col-xl-2 footer__col">
-                            <h3 className="link-text small-title">Links</h3>
+                        <div className="col-links col-sm-12 col-md-3 col-lg-3 col-xl-2">
+                            <h3 className="footer-text small-title">Links</h3>
                             <hr className="hr-left" />
                             <ul className="menu">
                                 <li><a href="#">About Us</a></li>
@@ -29,14 +29,14 @@ class Footer extends Component {
                                 <li><a href="#">Contact Us</a></li>
                             </ul>
                         </div>
-                        <div className="col-sm-6 col-md-2 col-xl-3 footer__col">
-                            <div className="social-footer">
+                        <div className="col-sm-6 col-md-3 col-lg-2 col-xl-3">
+                            <div className="footer-text social-footer">
                                 <h3 className="small-title">Connect with us </h3>
                                 <hr className="hr-left" />
                                 <div className="div-fa"><a href="https://www.facebook.com/OfficialSRH1987/?ref=br_rs" target="_blank"><i className="fa fa-facebook icon-round"></i></a></div>
                             </div>
                         </div>
-                        <div className="col-sm-6 col-md-2 col-xl-3 footer__col">
+                        <div className="col-sm-6 col-md-3 col-lg-3 col-xl-2 footer__col">
                             <img src="images/logo1.jpg" className="footer-logo" />
                         </div>
                     </div>
