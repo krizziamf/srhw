@@ -22,7 +22,7 @@ background-color: #fbfcfc;
 }
 
 .read-div {
-margin: 0 10%;
+margin-bottom: 25px;
 }
 
 .read-div p {
@@ -71,6 +71,10 @@ input required:active {
   box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
 } */
 
+.small {
+  color: red;
+  font-size: 0.8rem;
+}
 
 @media only screen and (max-width: 768px) {
     .react-datepicker-wrapper {

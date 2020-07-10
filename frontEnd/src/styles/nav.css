@@ -56,6 +56,7 @@
 
 .srh-navbar {
     background-color:#2B6DAD;
+    box-shadow: 0 6px 6px -6px #333;
     font-size: 13.5px;
     font-family: 'PT Sans', sans-serif;
     text-transform: uppercase;

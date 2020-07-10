@@ -18,9 +18,19 @@ footer {
 }
 
 footer .small-title {
-  margin-bottom: 20px;
+  margin-bottom: -4px;
   font-size: 22px;
   color: #fff;
+}
+
+hr {
+  border-color: #fff;
+  border-width: 2px;
+  max-width: 40px;
+}
+
+hr.hr-left{
+  margin-left: 0;
 }
 
 footer .footer-div {
@@ -96,9 +106,9 @@ footer #copyright .nav-inline {
   margin-bottom: 0;
 }
 
-.social-footer p {
+/* .social-footer {
     text-align: center;
-}
+} */
 
 .social-footer a i {
   font-size: 14px;
@@ -119,6 +129,10 @@ footer .fa {
     color: #fff;
     margin-right: 5px;
 }
+/* 
+.social-footer .div-fa {
+  text-align: center;
+} */
 
 .social-footer .fa-facebook:hover {
   background: #3b5998;
@@ -131,9 +145,10 @@ footer .fa {
 }
 
 .footer-logo {
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
   border-radius: 8px;
+  vertical-align: middle;
 }
 
 .light-footer {
@@ -166,5 +181,8 @@ footer .fa {
 @media only screen and (max-width: 575px) {
     .footer {
       text-align: center;
+    }
+    hr.hr-left{
+      margin-left: auto;
     }
 }

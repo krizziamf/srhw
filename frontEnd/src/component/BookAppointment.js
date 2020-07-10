@@ -236,28 +236,29 @@ class BookAppointment extends Component {
 
             <div className="container">
                 <h4>Book an Appointment Form</h4>
-                <div className="read-div">
-                    <p>* Please click <a href="#" data-toggle="modal" data-target="#exampleModalLong">here</a> for the detailed Sto. Rosario Hospital privacy statement.</p>
-                </div>
-                <div className="modal fade bd-example-modal-lg" id="exampleModalLong" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div className="modal-dialog modal-lg" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLongTitle">CONSENT FORM FOR TELECONSULTATION</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div className="modal-body">
-                                <Privacy />
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                <form onSubmit={this.handleSubmit} data-aos="fade-up" data-aos-duration="1000">
+                    <div className="read-div">
+                        <p><sup className="small">*</sup>Please click <a href="#" data-toggle="modal" data-target="#exampleModalLong">here</a> for the detailed Sto. Rosario Hospital privacy statement.</p>
+                    </div>
+                    <div className="modal fade bd-example-modal-lg" id="exampleModalLong" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div className="modal-dialog modal-lg" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLongTitle">CONSENT FORM FOR TELECONSULTATION</h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div className="modal-body">
+                                    <Privacy />
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <form onSubmit={this.handleSubmit} data-aos="fade-up" data-aos-duration="2000">
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <h5>Client's Information</h5>
@@ -297,7 +298,6 @@ class BookAppointment extends Component {
                                         className="form-control form-control-sm"
                                         selected={birthday}
                                         onChange={this.birthdayChange}
-                                        // peekNextMonth
                                         showMonthDropdown
                                         showYearDropdown
                                         dropdownMode="select"
@@ -332,7 +332,7 @@ class BookAppointment extends Component {
 
 
                             <div className="form-group">
-                                <label>Home Address: <sup className="small">*</sup></label>
+                                <label>Home Address <sup className="small">*</sup></label>
                                 <textarea
                                     className="form-control form-control-sm"
                                     name="address"
@@ -341,7 +341,7 @@ class BookAppointment extends Component {
                                     cols="40" required></textarea>
                             </div>
                             <div className="form-group">
-                                <label>Email</label>
+                                <label>Email <sup className="small">*</sup></label>
                                 <input required
                                     className="form-control form-control-sm"
                                     type="email"
@@ -473,7 +473,7 @@ class BookAppointment extends Component {
                             <p>{this.state.text}</p>
                         </div>
                     </div>
-                    <p>* By filling out this online form and continuing to use this website, you agree to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
+                    <p><sup className="small">*</sup> By filling out this online form and continuing to use this website, you agree to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
                 </form>
             </div>
         )
