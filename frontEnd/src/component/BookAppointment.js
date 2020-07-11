@@ -160,6 +160,8 @@ class BookAppointment extends Component {
     }
 
     handleSubmit = event => {
+        console.log(preferredTime);
+        console.log(preferredDate);
         alert(`Thank you! Your request has been sent. `);
         event.preventDefault();
 
