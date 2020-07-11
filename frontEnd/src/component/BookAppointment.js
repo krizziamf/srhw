@@ -123,6 +123,7 @@ class BookAppointment extends Component {
     }
 
     timeChange = date => {
+        console.log("nasa timechange to")
         const newTime = new Date(`${this.state.selectedDate} ${date.getHours()}:${date.getMinutes()}`)
 
         this.setState({
