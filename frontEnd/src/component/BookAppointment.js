@@ -144,7 +144,7 @@ class BookAppointment extends Component {
             }
         })
 
-        if (this.state.doctor === "5f0136bc87f9224494d0d551") {
+        if (this.state.doctor === "5ef758f6aa008b0f0f4ca017") {
             excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 12));
             excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 12));
             excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 12));
