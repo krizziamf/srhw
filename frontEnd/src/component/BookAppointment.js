@@ -144,12 +144,12 @@ class BookAppointment extends Component {
                 excludeDoctorTime.push(setHours(setMinutes(appointmentDate, appointmentDate.getMinutes()), appointmentDate.getHours()))
             }
             if (this.state.doctor === "5ef758f6aa008b0f0f4ca017") {
-                excludeDoctorTime.push(setHours(setMinutes(appointmentDate, 0), 12));
-                excludeDoctorTime.push(setHours(setMinutes(appointmentDate, 20), 12));
-                excludeDoctorTime.push(setHours(setMinutes(appointmentDate, 40), 12));
-                excludeDoctorTime.push(setHours(setMinutes(appointmentDate, 0), 13));
-                excludeDoctorTime.push(setHours(setMinutes(appointmentDate, 20), 13));
-                excludeDoctorTime.push(setHours(setMinutes(appointmentDate, 40), 13));
+                excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 12));
+                excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 12));
+                excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 12));
+                excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 13));
+                excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 13));
+                excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 13));
             }
 
         })
