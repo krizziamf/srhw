@@ -51,9 +51,9 @@ border-bottom:  #d5dbdb 1px solid;
 padding-bottom: 15px;
 }
 
-.react-datepicker__time-list-item--disabled {
+/* .react-datepicker__time-list-item--disabled {
   display: none;
-}
+} */
 
 form .btn {
 margin: 10px 0;
