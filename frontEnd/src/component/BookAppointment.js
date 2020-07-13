@@ -159,8 +159,6 @@ class BookAppointment extends Component {
     }
 
     handleSubmit = event => {
-        // console.log(preferredTime);
-        // console.log(preferredDate);
         alert(`Thank you! Your request has been sent. `);
         event.preventDefault();
 
@@ -254,6 +252,7 @@ class BookAppointment extends Component {
                 <form onSubmit={this.handleSubmit} data-aos="fade-up" data-aos-duration="1000">
                     <div className="read-div">
                         <p><sup className="small">*</sup>Please click <a href="#" data-toggle="modal" data-target="#exampleModalLong">here</a> for the detailed Sto. Rosario Hospital privacy statement.</p>
+
                     </div>
                     <div className="modal fade bd-example-modal-lg" id="exampleModalLong" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div className="modal-dialog modal-lg" role="document">
@@ -483,11 +482,12 @@ class BookAppointment extends Component {
                                     <option value="PayMaya">PayMaya</option>
                                 </select>
                             </div>
+                            <p><sup className="small">*</sup>By filling out this online form and continuing to use this website, you certify that all information submitted is valid and correct and you agree
+                            to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
                             <button className="btn btn-primary">Submit</button>
                             <p>{this.state.text}</p>
                         </div>
                     </div>
-                    <p><sup className="small">*</sup> By filling out this online form and continuing to use this website, you agree to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
                 </form>
             </div>
         )

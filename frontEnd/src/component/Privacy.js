@@ -9,7 +9,7 @@ class Privacy extends Component {
                     <h6><strong>Pagpapakilala at Layunin: </strong></h6>
                     <p>Ang Telemedicine ay ang paggamit ng telepono, cellphone, o computer kung saan bilang pasyente, ako ay mabibigyan ng kakayahan
                         upang makipag-usap sa aking doctor para sa pagtukoy ng aking posibleng sakit, lunas na gagawin, pagbibigay-kaalaman, at pangangalaga
-                         pagkatapos ng mga unang pagpapagamot (follow-up care) sa pagkakataong hindi possible nag pag-uusap ng harapan sa parehong lugar sa
+                         pagkatapos ng mga unang pagpapagamot (follow-up care) sa pagkakataong hindi posible ang pag-uusap ng harapan sa parehong lugar. Sa
                           paglahok sa ganitong teleconsultation, tinatanggap at kinikilala ko na may nabubuong isang kasunduang doktor-pasyente (physician-patient relationship)
                       na ako mismo ang humiling.</p>
 
@@ -38,10 +38,10 @@ class Privacy extends Component {
                     sa pagbibigay ng diagnosis.</p>
 
                     <p><strong>Sakaling may madaliang ikinakabahala:</strong> Responsibilidad ng aking doktor ang i-refer o ipatingin ako sa pinakamalapit na ospital sa pagkakataong sa suri niya’y lubhang
-                         mahalaga ang aking kalagayan o nararamdaman at nangangailangan ito ng mabilisang tugon at tulong ng mga doktor. Matapos ang ganitong responsibilidad ng aking
+                         mahalaga ang aking kalagayan o nararamdaman at nangangailangan ito ng mabilisang tugon at tulong ng mga doktor. Matatapos ang ganitong responsibilidad ng aking
                      doktor sa pagtatapos ng aking konsultasyong telemedicine.</p>
 
-                    <p><strong>Mga Ipinapahayag ko na:</strong></p>
+                    <p><strong>Ipinapahayag ko na:</strong></p>
                     <ul>
                         <li>Nabasa ko ang form na ito at lubusang nauunawaan ang sinasabi rito.</li>
                         <li>Lubusan kong naiintindihan ang mga panganib at benepisyo ng konsultasyong telemedicine sapagkat naibahagi ito sa isang wikang nauunawaan ko.</li>
