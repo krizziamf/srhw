@@ -12,35 +12,35 @@ class Privacy extends Component {
                          pagkatapos ng mga unang pagpapagamot (follow-up care) sa pagkakataong hindi posible ang pag-uusap ng harapan sa parehong lugar. Sa
                           paglahok sa ganitong teleconsultation, tinatanggap at kinikilala ko na may nabubuong isang kasunduang doktor-pasyente (physician-patient relationship)
                       na ako mismo ang humiling.</p>
-
+                    <br />
                     <p><strong>Mga katangian ng Konsultasyong Telemedicine:</strong> Nauunawaan ko na katulad ng konsultasyong harapan, tatanungin ako sa aking mga dating naging karamdaman,
                         ibabahagi rin ang mga dokumento tulad ng laboratory test, imaging result, at iba pang may mahalagang kaugnayan sa aking kalagayan. Dagdag pa dito,
                         maaaring ihiling na maipakita  ko ang ibang bahagi ng aking katawan na may maitutulong para makabuo ng diagnosis dahil hindi direktang magagawa ng
                         aking doktor ang mga kinakailangang pisikal na pagsisiyasat (physical examination).
                     </p>
-
+                    <br />
                     <p><strong>Mga Benepisyo:</strong> Sa tulong ng telemedicine, maaari akong mabigyan ng gabay  sa aking kondisyon at sa mga susunod na hakbang sakaling magbago ang kondisyong ito;
                     maaaring mabigyan ng preskripsyon sa gamot na dapat inumin; at mabibigyan ng gabay sa kung ano ang mga maaaring gawing laboratory at imaging test.</p>
-
+                    <br />
                     <p><strong>Mga Posibleng Panganib:</strong> Nauunawaan ko ang mga posibleng panganib sa paggamit ng teknolohiyang ito, kasama ang pagka-istorbo, kawalan ng access sa pisikal na
                          kopya ng paper charts/medical records, mga pagkukulang dulot ng maling paggana ng mga kagamitang eletroniko, o hindi pinahintulutang access na magiging dahilan
                       sa pagkasira ng data privacy at confidentiality. </p>
-
+                    <br />
                     <p>Itinuturing bilang pribado ang lahat ng konsultasyon pero dahil sa mga katangian ng ginagamit na teknolohiya, nauunawaan kong sa gitna ng mga isinagawang angkop
                          na hakbang, hindi masisigurado ng doktor ang kaligtasan ng aking personal na datos mula sa pagnanakaw (data hacking). Dahil dito, hindi ko ipapasa sa aking doctor
                       ang pananagutan sa anumang datos na mawawala o maging ang illegal na paggamit  impormasyong magmumula sa isang security breach.</p>
-
+                    <br />
                     <p><strong>Pribadong Datos at Impormasyong Hindi Basta-basta Ipinagkakatiwala sa Iba:</strong> Sang-ayon akong ibahagi ang aking personal na datos upang mapasimulan at maisagawa ang
                         pagtatakda ng schedule sa aking konsultasyon at upang maproseso ang pagkuwenta ng mga bayarin. <strong>PUMAPAYAG AKONG HINDI I-RECORD SA ANYO NG VIDEO O AUDIO GAYON DIN
                     ANG PAGBABAHAGI SA IBA NG MGA DETALYE TUNGKOL SA AKING KONSULTASYON BILANG PAGTUGON SA DATA PRIVACY ACT OF 2012.</strong></p>
-
+                    <br />
                     <p><strong>Mga Limitasyon:</strong> Ang pisikal na pagsisiyasat na ginagawa sa karaniwang harapang konsultasyon ay hindi possible at dahil doon ay nagiging isang malaking balakid ito
                     sa pagbibigay ng diagnosis.</p>
-
+                    <br />
                     <p><strong>Sakaling may madaliang ikinakabahala:</strong> Responsibilidad ng aking doktor ang i-refer o ipatingin ako sa pinakamalapit na ospital sa pagkakataong sa suri niya’y lubhang
                          mahalaga ang aking kalagayan o nararamdaman at nangangailangan ito ng mabilisang tugon at tulong ng mga doktor. Matatapos ang ganitong responsibilidad ng aking
                      doktor sa pagtatapos ng aking konsultasyong telemedicine.</p>
-
+                    <br />
                     <p><strong>Ipinapahayag ko na:</strong></p>
                     <ul>
                         <li>Nabasa ko ang form na ito at lubusang nauunawaan ang sinasabi rito.</li>
