@@ -72,10 +72,6 @@ font-style: italic;
 font-size: 13px;
 }
 
-form li {
-  font-style: italic;
-  font-size: 13px;  
-}
 /* 
 input required:active {
   box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);

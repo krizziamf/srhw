@@ -7,3 +7,8 @@
     text-align: center;
     padding: 30px;
 }
+
+.privacy-container li {
+        font-style: italic;
+        font-size: 13px;  
+}
