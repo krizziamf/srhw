@@ -482,7 +482,7 @@ class BookAppointment extends Component {
                                     <option value="PayMaya">PayMaya</option>
                                 </select>
                             </div>
-                            <p><sup className="small">*</sup>By filling out this online form, you certify that all information submitted is valid and correct and you agree
+                            <p><sup className="small">*</sup>By filling out this online form, you certify that all information submitted are valid and correct and you agree
                             to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
                             <button className="btn btn-primary">Submit</button>
                             <p>{this.state.text}</p>
