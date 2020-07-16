@@ -11,6 +11,7 @@ import TopBar from './component/TopBar';
 import Privacy from './component/Privacy';
 import Carousel from './component/Carousel';
 import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
+import Contact from './component/Contact';
 
 function App() {
   return (
@@ -20,14 +21,13 @@ function App() {
         <Header />
         <Switch>
           <Route path="/bookappointment" render={() => <BookAppointment />}></Route>
-          <Route path="/privacy" render={() => <Privacy />}></Route>
-          <Route exact path="/" render={props => (
+          {/* <Route path="/hom" render={() => <Home />}></Route> */}
+          <Route exact path="/home" render={props => (
             <div>
-              {/* <Carousel /> */}
-              <BookAppointment />
-              {/* <Home /> */}
-              {/* <About /> */}
-
+              {/* <BookAppointment /> */}
+              <Home />
+              <About />
+              <Contact />
             </div>
           )}></Route>
         </Switch>

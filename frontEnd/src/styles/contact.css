@@ -1,0 +1,40 @@
+#contact {
+    background-color: #fafafa;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+}
+
+
+.contact-title-heading {
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #2B6DAD;
+    width: 8%;
+    top: 80px;
+}
+
+h2.contact-title-heading {
+    color: #333;
+    padding-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+form .btn-contact {
+    width: unset;
+    padding: .5rem 2.2rem;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 2rem;
+}
+
+form .btn-contact:hover {
+    background-color: #fff;
+    color: #2B6DAD;
+    border: 1px solid #2B6DAD;
+}
