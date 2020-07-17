@@ -20,8 +20,9 @@ function App() {
         <TopBar />
         <Header />
         <Switch>
-          <Route path="/bookappointment" render={() => <BookAppointment />}></Route>
-          {/* <Route path="/hom" render={() => <Home />}></Route> */}
+          <Route exact path="/" render={() => <BookAppointment />}></Route>
+          <Route exact path="/bookappointment" render={() => <BookAppointment />}></Route>
+          {/* <Route path="/home" render={() => <Home />}></Route> */}
           <Route exact path="/home" render={props => (
             <div>
               {/* <BookAppointment /> */}
