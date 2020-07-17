@@ -14,9 +14,9 @@ module.exports = nodeMailer.createTransport({
     accessToken: process.env.EMAIL_AUTH_ACCESS_TOKEN,
     expires: process.env.EMAIL_AUTH_EXPIRES
   },
-  tls: {
-    rejectUnauthorized: false //process.env.EMAIL_REJECT_UNAUTHORIZED
-  }
+  // tls: {
+  //   rejectUnauthorized: false //process.env.EMAIL_REJECT_UNAUTHORIZED
+  // }
 });
 
 //config ng transport ni nodemailer. confgi ng email
