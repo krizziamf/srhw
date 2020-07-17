@@ -145,7 +145,7 @@ class BookAppointment extends Component {
             }
         })
 
-        if (this.state.doctor === "5ef758dfaa008b0f0f4ca015") {
+        if (this.state.doctor === "5ef758dfaa008b0f0f4ca015", "5ef758efaa008b0f0f4ca016", "5ef758f6aa008b0f0f4ca017") {
             excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 12));
             excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 12));
             excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 12));
@@ -154,23 +154,23 @@ class BookAppointment extends Component {
             excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 13));
         }
 
-        if (this.state.doctor === "5ef758efaa008b0f0f4ca016") {
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 12));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 12));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 12));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 13));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 13));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 13));
-        }
+        // if (this.state.doctor === "5ef758efaa008b0f0f4ca016") {
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 12));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 12));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 12));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 13));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 13));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 13));
+        // }
 
-        if (this.state.doctor === "5ef758f6aa008b0f0f4ca017") {
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 12));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 12));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 12));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 13));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 13));
-            excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 13));
-        }
+        // if (this.state.doctor === "5ef758f6aa008b0f0f4ca017") {
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 12));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 12));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 12));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 0), 13));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 20), 13));
+        //     excludeDoctorTime.push(setHours(setMinutes(newDate, 40), 13));
+        // }
 
 
         return excludeDoctorTime;
