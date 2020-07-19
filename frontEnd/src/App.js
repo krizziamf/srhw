@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/home" render={props => (
             <div>
               {/* <BookAppointment /> */}
-              <Home />
+              <Carousel />
               <About />
               <Contact />
             </div>
