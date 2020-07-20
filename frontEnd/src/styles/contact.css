@@ -9,13 +9,13 @@
     position: relative;
 }
 
-.section-title::after {
+/* .section-title::after {
     content: '';
     position: absolute;
     border-bottom: 2px solid #2B6DAD;
     width: 8%;
     top: 80px;
-}
+} */
 
 h2.contact-title-heading {
     color: #333;
