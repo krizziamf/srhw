@@ -20,13 +20,13 @@ class Footer extends Component {
                             <h3 className="footer-text small-title">Links</h3>
                             <hr className="hr-left" />
                             <ul className="menu">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Find a Doctor</a></li>
-                                <li><a href="#">Patient Guide</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Latest Events</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="/page_under_construction">About Us</a></li>
+                                <li><a href="/page_under_construction">Services</a></li>
+                                <li><a href="/page_under_construction">Find a Doctor</a></li>
+                                <li><a href="/page_under_construction">Patient Guide</a></li>
+                                <li><a href="/page_under_construction">Careers</a></li>
+                                <li><a href="/page_under_construction">Latest Events</a></li>
+                                <li><a href="/page_under_construction">Contact Us</a></li>
                             </ul>
                         </div>
                         <div className="col-sm-6 col-md-3 col-lg-2 col-xl-3">
