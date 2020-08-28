@@ -23,13 +23,11 @@ function App() {
           <Route exact path="/" render={() => <BookAppointment />}></Route>
           <Route exact path="/bookappointment" render={() => <BookAppointment />}></Route>
           <Route exact path="/page_under_construction" render={() => <UnderDev />}></Route>
-          {/* <Route path="/home" render={() => <Home />}></Route> */}
+          <Route path="/contact" render={() => <Contact />}></Route>
           <Route exact path="/home" render={props => (
             <div>
-              {/* <BookAppointment /> */}
               <Carousel />
               <About />
-              <Contact />
             </div>
           )}></Route>
         </Switch>

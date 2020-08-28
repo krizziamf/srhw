@@ -16,14 +16,14 @@ class Contact extends Component {
                                 <form action="#">
                                     <div className="row">
                                         <div className="col">
-                                            <input type="text" className="form-control" placeholder="Enter your name" />
+                                            <input type="text" className="form-control" placeholder="Name" />
                                         </div>
                                         <div className="col">
-                                            <input type="email" className="form-control" placeholder="Enter your email address" />
+                                            <input type="email" className="form-control" placeholder="Email address" />
                                         </div>
                                     </div>
                                     <div className="form-group mt-4">
-                                        <textarea className="form-control" rows="10" placeholder="Enter your message" />
+                                        <textarea className="form-control" rows="10" placeholder="Message" />
                                     </div>
                                     <button type="submit" className="btn btn-contact mt-4">Send</button>
                                 </form>

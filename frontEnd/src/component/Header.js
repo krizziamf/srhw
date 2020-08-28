@@ -49,7 +49,7 @@ class Header extends Component {
                                 <a className="nav-link" href="/page_under_construction">Latest Events</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/page_under_construction">Contact Us</a>
+                                <a className="nav-link" href="/contact">Contact Us</a>
                             </li>
                         </ul>
                     </div>
