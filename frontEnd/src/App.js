@@ -23,11 +23,20 @@ function App() {
           <Route exact path="/" render={() => <BookAppointment />}></Route>
           <Route exact path="/bookappointment" render={() => <BookAppointment />}></Route>
           <Route exact path="/page_under_construction" render={() => <UnderDev />}></Route>
+          <Route exact path="/about" render={() => <About />}></Route>
+          <Route exact path="/ancilliaries" render={() => <UnderDev />}></Route>
+          <Route exact path="/department_and_units" render={() => <UnderDev />}></Route>
+          <Route exact path="/find_a_doctor" render={() => <UnderDev />}></Route>
+          <Route exact path="/admission" render={() => <UnderDev />}></Route>
+          <Route exact path="/philhealth_requirements" render={() => <UnderDev />}></Route>
+          <Route exact path="/rooms" render={() => <UnderDev />}></Route>
+          <Route exact path="/health_maintenance_organizations" render={() => <UnderDev />}></Route>
+          <Route exact path="/careers" render={() => <UnderDev />}></Route>
+          <Route exact path="/latest_events" render={() => <UnderDev />}></Route>
           <Route path="/contact" render={() => <Contact />}></Route>
           <Route exact path="/home" render={props => (
             <div>
               <Carousel />
-              <About />
             </div>
           )}></Route>
         </Switch>
