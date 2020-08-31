@@ -38,7 +38,7 @@ class Carousel extends Component {
                             <div className="col-md-5 text-center about-col-right">
                                 {/* <h2 className="about-title-heading">About Us</h2> */}
                                 <p className="about-text">Sto. Rosario Hospital strives to be the premiere local healthcare provider to residents of
-                            its service area within Rosario and neighboring municipalitiess.</p>
+                            its service area within Rosario and neighboring municipalities.</p>
                                 <button className="btn">Learn More</button>
                             </div>
 
