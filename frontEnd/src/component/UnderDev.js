@@ -6,7 +6,7 @@ class UnderDev extends Component {
         return (
             <div className="under-container">
                 <div className="container">
-                    <h1>Page under construction</h1>
+                    <h1>Page under construction...</h1>
                 </div>
             </div>
         )
