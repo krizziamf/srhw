@@ -1,0 +1,17 @@
+.card {
+    margin: 8% auto;
+    max-width: 600px;
+}
+
+.card-header h2 {
+    vertical-align: middle;
+}
+
+.fa-check-circle-o {
+    font-size: 3.8rem;
+    vertical-align: middle;
+}
+
+.card .card-body {
+    padding: 3rem;
+}

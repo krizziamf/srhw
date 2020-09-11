@@ -6,11 +6,12 @@ import Header from './component/Header';
 import Home from './component/Home';
 import About from './component/About';
 import BookAppointment from './component/BookAppointment';
+import ThankYouPage from './component/ThankYouPage';
 import Footer from './component/Footer';
 import TopBar from './component/TopBar';
 import UnderDev from './component/UnderDev';
 import Carousel from './component/Carousel';
-import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Contact from './component/Contact';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Switch>
           <Route exact path="/" render={() => <BookAppointment />}></Route>
           <Route exact path="/bookappointment" render={() => <BookAppointment />}></Route>
+          <Route exact path="/request_sent" render={() => <ThankYouPage />}></Route>
           <Route exact path="/page_under_construction" render={() => <UnderDev />}></Route>
           <Route exact path="/about" render={() => <About />}></Route>
           <Route exact path="/ancilliaries" render={() => <UnderDev />}></Route>

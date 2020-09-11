@@ -4,7 +4,9 @@ import DatePicker from 'react-datepicker';
 import '../styles/bookAppt.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import { setMinutes, setHours } from "date-fns";
+import { Redirect } from "react-router-dom";
 import Privacy from './Privacy';
+import ThankYouPage from './ThankYouPage';
 
 class BookAppointment extends Component {
     constructor(props) {
@@ -174,12 +176,16 @@ class BookAppointment extends Component {
         }
 
 
+
         return excludeDoctorTime;
     }
 
     handleSubmit = event => {
-        alert(`Thank you! Your request has been sent. `);
+        // alert(`Thank you! Your request has been sent. 
+        // Link
+        // `);
         event.preventDefault();
+
 
         const { firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, complaint, patient, preferredDate, preferredTime, payment } = this.state;
 
@@ -263,6 +269,9 @@ class BookAppointment extends Component {
     render() {
         const { minimumTime, maximumTime, initDate, firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment, minHour, minMinute, maxHour, maxMinute } = this.state;
 
+        if (this.state.text) {
+            return <Redirect to='/request_sent' />
+        }
         return (
 
             <div className="container">
