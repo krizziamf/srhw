@@ -19,7 +19,8 @@ let sendEmail = async (form, type) => {
         .replace('##patient##', form.patient)
         .replace('##preferredDate##', form.preferredDate)
         .replace('##preferredTime##', form.preferredTime)
-        .replace('##payment##', form.payment);
+        .replace('##payment##', form.payment)
+        .replace('##hmo##', form.hmo);
       break;
   }
   let transporter = emailConfig;

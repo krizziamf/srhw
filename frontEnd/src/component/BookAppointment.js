@@ -30,6 +30,8 @@ class BookAppointment extends Component {
             preferredDate: '',
             preferredTime: '',
             payment: '',
+            hmo: '',
+            disableHmo: true,
             selectedDate: '',
             doctorTime: [],
             filteredDoctorTime: [],
@@ -187,7 +189,7 @@ class BookAppointment extends Component {
         event.preventDefault();
 
 
-        const { firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, complaint, patient, preferredDate, preferredTime, payment } = this.state;
+        const { firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, complaint, patient, preferredDate, preferredTime, payment, hmo } = this.state;
 
         axios.post('/appointment', {
             firstname,
@@ -205,7 +207,8 @@ class BookAppointment extends Component {
             patient,
             preferredDate,
             preferredTime,
-            payment
+            payment,
+            hmo
         }, console.log("Preferred: " + preferredDate, preferredTime))
             .then(res => this.setState({ text: res.data }))
             .catch(err => console.log(err))
@@ -228,6 +231,8 @@ class BookAppointment extends Component {
             preferredDate: '',
             preferredTime: '',
             payment: '',
+            hmo: '',
+            disableHmo: true,
             disablePreferredDate: true
         });
     }
@@ -264,10 +269,18 @@ class BookAppointment extends Component {
         return day !== 0
     }
 
+    // isHmoSelected = () => {
+    //     if (disableHmo === true) {
+
+    //     } else {
+
+    //     }
+    // }
+
 
 
     render() {
-        const { minimumTime, maximumTime, initDate, firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment, minHour, minMinute, maxHour, maxMinute } = this.state;
+        const { minimumTime, maximumTime, initDate, firstname, lastname, middlename, age, birthday, gender, address, email, contact, appointment, doctor, doctorNames, complaint, patient, preferredDate, preferredTime, payment, hmo, minHour, minMinute, maxHour, maxMinute } = this.state;
 
         if (this.state.text) {
             return <Redirect to='/request_sent' />
@@ -275,7 +288,7 @@ class BookAppointment extends Component {
         return (
 
             <div className="container">
-                <h4>Book an Appointment Form</h4>
+                <h4>Booking an Appointment for Teleconsult</h4>
 
                 <form onSubmit={this.handleSubmit} data-aos="fade-up" data-aos-duration="1000">
                     <div className="read-div">
@@ -508,16 +521,30 @@ class BookAppointment extends Component {
                                     <option value="">Select Payment</option>
                                     <option value="GCash">GCash</option>
                                     <option value="PayMaya">PayMaya</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="HMO">HMO</option>
                                 </select>
                             </div>
-                            <p><sup className="small">*</sup>By filling out this online form, you certify that all information submitted are valid and correct and you agree
-                            to the hospital's processing of your personal information as explained in the privacy statement through link provided above. </p>
+                            <div className="form-group">
+                                <label>Name of HMO Card</label>
+                                <input
+                                    className="form-control form-control-sm"
+                                    type="text"
+                                    name="hmo"
+                                    value={hmo}
+                                    onChange={this.handleChange}
+                                // disabled={this.state.disableHmo} 
+                                />
+
+                            </div>
+                            <p><sup className="small">*</sup>By filling out this online form, you certify that all information submitted are valid and correct, you agree
+                            to the hospital's processing of your personal information and you understand that your personal information is protected by R.A. 10173, Data Privacy Act of 2012. </p>
                             <button className="btn btn-primary">Submit</button>
                             <p>{this.state.text}</p>
                         </div>
                     </div>
                 </form>
-            </div>
+            </div >
         )
     }
 }
