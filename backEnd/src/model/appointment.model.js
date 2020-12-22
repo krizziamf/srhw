@@ -25,7 +25,7 @@ let appointmentSchema = new mongoose.Schema({
   preferredDate: stringRequired,
   preferredTime: stringRequired,
   payment: stringRequired,
-  hmo: stringRequired
+  hmo: String
 })
 let Appointments = mongoose.model('Appointments', appointmentSchema);
 

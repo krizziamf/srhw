@@ -31,7 +31,6 @@ class BookAppointment extends Component {
             preferredTime: '',
             payment: '',
             hmo: '',
-            disableHmo: true,
             selectedDate: '',
             doctorTime: [],
             filteredDoctorTime: [],
@@ -232,7 +231,6 @@ class BookAppointment extends Component {
             preferredTime: '',
             payment: '',
             hmo: '',
-            disableHmo: true,
             disablePreferredDate: true
         });
     }
@@ -268,15 +266,6 @@ class BookAppointment extends Component {
         const day = date.getDay();
         return day !== 0
     }
-
-    // isHmoSelected = () => {
-    //     if (disableHmo === true) {
-
-    //     } else {
-
-    //     }
-    // }
-
 
 
     render() {
@@ -533,9 +522,7 @@ class BookAppointment extends Component {
                                     name="hmo"
                                     value={hmo}
                                     onChange={this.handleChange}
-                                // disabled={this.state.disableHmo} 
                                 />
-
                             </div>
                             <p><sup className="small">*</sup>By filling out this online form, you certify that all information submitted are valid and correct, you agree
                             to the hospital's processing of your personal information and you understand that your personal information is protected by R.A. 10173, Data Privacy Act of 2012. </p>
