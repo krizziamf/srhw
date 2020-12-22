@@ -15,6 +15,8 @@ footer .social a {
 footer {
   background: #2B6DAD;
   color: #fff;
+  right: 0;
+  bottom: 0;
 }
 
 footer .small-title {
